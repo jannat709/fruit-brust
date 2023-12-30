@@ -26,7 +26,7 @@
 
   <body>
     <!-- navbar -->
-    <!-- <header class="px-5">
+    <header class="px-5 hidden lg:block">
       <div
         class="navbar bg-[rgb(248,85,89)] text-neutral-content rounded-full gap-x-10 lg:gap-x-24 flex justify-between"
       >
@@ -55,44 +55,38 @@
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
       </div>
-    </header> -->
-    <header class="lg:bg-[#F85559] px-5 rounded-full">
-      <nav class="flex justify-between items-center w-[192%] p-2 mx-auto">
-        <div class="flex navbar-center w-fit">
+    </header>
+    <!-- mobile view -->
+    <header class="lg:hidden">
+      <div class="navbar bg-base-100">
+        <div class="flex-none"></div>
+        <div class="flex-1">
           <img class="w-10" src="images/logo.png" alt="" />
-          <a class="text-3xl font-extrabold text-white">Fruit Burst</a>
+          <a class="text-3xl font-extrabold text-black">Fruit Burst</a>
         </div>
-        <div
-          class="md:static absolutes md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5"
-        >
-          <ul
-            class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8 text-white"
+        <button class="btn btn-square btn-ghost">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            class="inline-block w-5 h-5 stroke-current"
           >
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">All Fruits</a></li>
-          </ul>
-          <div
-            class="w-fit h-10 flex rounded-full bg-white px-4 items-center justify-between outline-none"
-          >
-            <input
-              type="text"
-              placeholder="Search"
-              class="h-full w-10 lg:w-52 rounded-full"
-            />
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </div>
-        </div>
-      </nav>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
     </header>
     <main>
       <!-- banner -->
-      <section class="carousel my-5 px-8 w-full">
+      <section class="carousel my-5 px-8 w-full min-h-[300px]">
         <div class="carousel w-full">
-          <div id="slide1" class="carousel-item relative w-full">
-            <img src="images/banner1.png" class="w-full" />
+          <div id="slide1" class="carousel-item relative w-full md:w-full">
+            <img src="images/banner1.png" class="w-full md:w-full" />
             <div
               class="text-center justify-center inset-0 items-center absolute bg-transparent py-10"
             >
@@ -192,12 +186,42 @@
             </div>
           </div>
         </div>
-        <div></div>
+      </section>
+      <!-- Bonus -->
+      <section class="hidden lg:block">
+        <div class="pl-80">
+          <div
+            class="absolute drop-shadow-lg bg-white text-center -mt-32 p-6 rounded-lg"
+          >
+            <div class="flex items-center gap-10">
+              <div class="w-24">
+                <img src="images/fruit1.png" alt="" />
+                <p>Strawberry</p>
+              </div>
+              <div class="w-20">
+                <img src="images/fruit2.png" alt="" />
+                <p>Orange</p>
+              </div>
+              <div class="w-24">
+                <img src="images/fruit3.png" alt="" />
+                <p>Mango</p>
+              </div>
+              <div class="w-24">
+                <img src="images/fruit4.png" alt="" />
+                <p>Strawberry</p>
+              </div>
+              <div class="w-24">
+                <img src="images/fruit5.png" alt="" />
+                <p>Mango</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <!-- Deal of the day -->
-      <section class="px-10 py-10 sm:text-center deal-of-the-day">
-        <div class="lg:flex space-x-72">
-          <div class="lg:text-start font-bold">
+      <section class="px-10 py-10 deal-of-the-day">
+        <div class="lg:flex lg:space-x-72">
+          <div class="text-center lg:text-start font-bold">
             <h4 class="text-5xl">Deal of the day</h4>
             <p>
               Contrary to popular belief, is not simply random text. It has
@@ -205,32 +229,30 @@
               it over 2000 years old.
             </p>
           </div>
-          <div>
-            <div class="grid grid-flow-col gap-5 text-center">
-              <div class="flex flex-col">
-                <span class="countdown font-mono text-5xl">
-                  <span style="--value: 29"></span>
-                </span>
-                days
-              </div>
-              <div class="flex flex-col">
-                <span class="countdown font-mono text-5xl">
-                  <span style="--value: 15"></span>
-                </span>
-                hours
-              </div>
-              <div class="flex flex-col">
-                <span class="countdown font-mono text-5xl">
-                  <span style="--value: 25"></span>
-                </span>
-                min
-              </div>
-              <div class="flex flex-col">
-                <span class="countdown font-mono text-5xl">
-                  <span style="--value: 08"></span>
-                </span>
-                sec
-              </div>
+          <div class="flex justify-center gap-10 py-10 text-center">
+            <div class="flex flex-col">
+              <span class="countdown font-mono text-5xl">
+                <span style="--value: 29"></span>
+              </span>
+              days
+            </div>
+            <div class="flex flex-col">
+              <span class="countdown font-mono text-5xl">
+                <span style="--value: 15"></span>
+              </span>
+              hours
+            </div>
+            <div class="flex flex-col">
+              <span class="countdown font-mono text-5xl">
+                <span style="--value: 25"></span>
+              </span>
+              min
+            </div>
+            <div class="flex flex-col">
+              <span class="countdown font-mono text-5xl">
+                <span style="--value: 08"></span>
+              </span>
+              sec
             </div>
           </div>
         </div>
@@ -611,9 +633,9 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="py-10">
-          <button class="btn btn-error text-white">Shop All</button>
+          <div class="py-10 flex justify-center items-center">
+            <button class="btn btn-error text-white block">Shop All</button>
+          </div>
         </div>
       </section>
       <!-- Meet the team section -->
@@ -629,7 +651,7 @@
           <div
             class="hero-content text-center text-neutral-content w-full h-fit flex flex-col justify-center items-center p-10 gap-y-10"
           >
-            <div class="text-white">
+            <div class="text-white flex-wrap">
               <h1 class="text-5xl font-bold">Meet the team section</h1>
               <p class="">
                 Contrary to popular belief, is not simply random text. It has
@@ -637,61 +659,61 @@
                 Latin literature from 45 BC, making it over 2000 years old.
               </p>
             </div>
-            <div class="flex gap-5">
-              <div class="text-white text-center">
+            <div class="lg:flex gap-5 items-center">
+              <div class="text-white text-center items-center">
                 <div class="pl-4">
-                  <img class="w-24" src="images/member1.png" alt="" />
-                </div>
-                <div class="pt-2">
-                  <h3 class="text-xl font-bold">Awlad Hossain</h3>
-                  <p>Fruits Expert</p>
-                </div>
-                <div class="p-5 flex gap-5">
-                  <i class="fa-brands fa-facebook"></i>
-                  <i class="fa-brands fa-twitter"></i>
-                  <i class="fa-brands fa-linkedin"></i>
+                  <img class="w-fit" src="images/member1.png" alt="" />
+                  <div class="pt-2">
+                    <h3 class="text-xl font-bold">Awlad Hossain</h3>
+                    <p>Fruits Expert</p>
+                  </div>
+                  <div class="p-5 flex gap-5">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                  </div>
                 </div>
               </div>
-              <div class="text-white text-center">
+              <div class="text-white text-center items-center">
                 <div class="pl-4">
-                  <img class="w-24" src="images/member2.png" alt="" />
-                </div>
-                <div class="pt-2">
-                  <h3 class="text-xl font-bold">Safia Chowdhury</h3>
-                  <p>Fruits Expert</p>
-                </div>
-                <div class="p-5 flex gap-5">
-                  <i class="fa-brands fa-facebook"></i>
-                  <i class="fa-brands fa-twitter"></i>
-                  <i class="fa-brands fa-linkedin"></i>
+                  <img class="w-fit" src="images/member2.png" alt="" />
+                  <div class="pt-2">
+                    <h3 class="text-xl font-bold">Awlad Hossain</h3>
+                    <p>Fruits Expert</p>
+                  </div>
+                  <div class="p-5 flex gap-5">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                  </div>
                 </div>
               </div>
-              <div class="text-white text-center">
+              <div class="text-white text-center items-center">
                 <div class="pl-4">
-                  <img class="w-24" src="images/member3.png" alt="" />
-                </div>
-                <div class="pt-2">
-                  <h3 class="text-xl font-bold">Rokib Hossain</h3>
-                  <p>Fruits Expert</p>
-                </div>
-                <div class="p-5 flex gap-5">
-                  <i class="fa-brands fa-facebook"></i>
-                  <i class="fa-brands fa-twitter"></i>
-                  <i class="fa-brands fa-linkedin"></i>
+                  <img class="w-fit" src="images/member3.png" alt="" />
+                  <div class="pt-2">
+                    <h3 class="text-xl font-bold">Awlad Hossain</h3>
+                    <p>Fruits Expert</p>
+                  </div>
+                  <div class="p-5 flex gap-5">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                  </div>
                 </div>
               </div>
-              <div class="text-white text-center">
+              <div class="text-white text-center items-center">
                 <div class="pl-4">
-                  <img class="w-24" src="images/member4.png" alt="" />
-                </div>
-                <div class="pt-2">
-                  <h3 class="text-xl font-bold">Chaity</h3>
-                  <p>Fruits Expert</p>
-                </div>
-                <div class="flex gap-5 p-2">
-                  <i class="fa-brands fa-facebook"></i>
-                  <i class="fa-brands fa-twitter"></i>
-                  <i class="fa-brands fa-linkedin"></i>
+                  <img class="w-fit" src="images/member4.png" alt="" />
+                  <div class="pt-2">
+                    <h3 class="text-xl font-bold">Awlad Hossain</h3>
+                    <p>Fruits Expert</p>
+                  </div>
+                  <div class="p-5 flex gap-5">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                  </div>
                 </div>
               </div>
             </div>
@@ -708,9 +730,12 @@
             over 2000 years old.
           </p>
         </div>
-        <div class="pt-5 flex gap-5 text-wrap">
+        <div class="lg:hidden mt-3">
+          <img src="images/whychoose1.png" alt="" />
+        </div>
+        <div class="pt-5 lg:flex gap-5 text-wrap">
           <div class="text-start gap-10">
-            <div class="flex">
+            <div class="flex why-choose-item">
               <div>
                 <i class="fa-solid fa-users bg-base-300 rounded-full p-2"></i>
               </div>
@@ -722,7 +747,7 @@
                 </p>
               </div>
             </div>
-            <div class="flex">
+            <div class="flex why-choose-item">
               <div>
                 <i class="fa-regular fa-heart bg-base-300 rounded-full p-2"></i>
               </div>
@@ -734,7 +759,7 @@
                 </p>
               </div>
             </div>
-            <div class="flex">
+            <div class="flex why-choose-item">
               <div>
                 <i class="fa-solid fa-gift bg-base-300 rounded-full p-2"></i>
               </div>
@@ -747,11 +772,14 @@
               </div>
             </div>
           </div>
-          <div class="hidden lg:block">
+          <div class="lg:block hidden">
             <img src="images/whychoose1.png" alt="" />
           </div>
           <div class="text-end text-wrap">
-            <div class="flex">
+            <div class="flex why-choose-item">
+              <div class="lg:hidden">
+                <i class="fa-regular fa-lemon bg-base-300 rounded-full p-2"></i>
+              </div>
               <div>
                 <h3 class="font-bold text-2xl">Integrated Supplier</h3>
                 <p>
@@ -759,11 +787,16 @@
                   amazing and fresh fruits.
                 </p>
               </div>
-              <div>
+              <div class="hidden lg:block">
                 <i class="fa-regular fa-lemon bg-base-300 rounded-full p-2"></i>
               </div>
             </div>
-            <div class="flex">
+            <div class="flex why-choose-item">
+              <div class="lg:hidden">
+                <i
+                  class="fa-solid fa-ice-cream bg-base-300 rounded-full p-2"
+                ></i>
+              </div>
               <div>
                 <h3 class="font-bold text-2xl">Sustainable Practice</h3>
                 <p>
@@ -771,21 +804,26 @@
                   amazing and fresh fruits.
                 </p>
               </div>
-              <div>
+              <div class="hidden lg:block">
                 <i
                   class="fa-solid fa-ice-cream bg-base-300 rounded-full p-2"
                 ></i>
               </div>
             </div>
-            <div class="flex">
+            <div class="flex why-choose-item">
+              <div class="lg:hidden">
+                <i
+                  class="fa-regular fa-thumbs-up bg-base-300 rounded-full p-2"
+                ></i>
+              </div>
               <div>
-                <h3 class="font-bold text-2xl">The Benefits Only</h3>
+                <h3 class="font-bold text-2xl">Integrated Supplier</h3>
                 <p>
                   Professional employees are there for you to pick the most
                   amazing and fresh fruits.
                 </p>
               </div>
-              <div>
+              <div class="hidden lg:block">
                 <i
                   class="fa-regular fa-thumbs-up bg-base-300 rounded-full p-2"
                 ></i>
@@ -794,6 +832,7 @@
           </div>
         </div>
       </section>
+      <!-- footer -->
       <footer class="pt-10">
         <div class="footer footer-center p-10 bg-black text-primary-content">
           <div class="flex justify-between gap-2 w-fit">
