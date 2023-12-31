@@ -6,4 +6,7 @@ module.exports = {
     './src/**/*.html',
     './src/**/*.js',
   ],
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+  },
 };
